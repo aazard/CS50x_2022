@@ -8,16 +8,16 @@ Please see attached video for details.
 
 As you can see from the video I have included an about page aswell.
 
-What will your software do? What features will it have? How will it be executed?
+What will your software do? What features will it have? How will it be executed? \
 It is a search engine, like Goolge or Yahoo. Although my project is made in python.
 
 A search engine is a software program that helps people find the information they are looking for online using keywords or phrases.
 Search engines are able to return results quickly—even with millions of websites online—by scanning the Internet continuously and indexing every page they find.
 
-What new skills will you need to acquire? What topics will you need to research?
+What new skills will you need to acquire? What topics will you need to research? \
 I greatly need enhanced my skills across languages. I learned, and need to continue learning, more methods for achieveing my programming goals.
 
-If working with one or two classmates, who will do what?
+If working with one or two classmates, who will do what? \
 NA
 
 I do not have contact directly with any other students.
@@ -28,7 +28,9 @@ Achieveing my goals inside a set time line will allow me to more realistic be pr
 
 I would like to thank the CS50 team, this was great!
 
-I just want to say THANK YOU! this is a fantastic course! I live on the strategy side of IT, and I have wanted to learn more about computer science for quite some time.
+I just want to say THANK YOU! 
+
+This is a fantastic course! I live on the hardware/support side of IT, and I have wanted to learn more about computer science for quite some time.
 I enjoy building things in general, so I took on woodworking, among other hobbies. The feeling that I get to make something from scratch gives me a sense of fulfillment, which is why I have always been passionate about programming.
 
 However, researching the subject, I have always come up against boot camps and a massive information overload. Until you came along!!!!
