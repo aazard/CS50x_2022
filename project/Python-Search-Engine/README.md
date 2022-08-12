@@ -14,6 +14,8 @@ It is a search engine, like Goolge or Yahoo. Although my project is made in pyth
 A search engine is a software program that helps people find the information they are looking for online using keywords or phrases.
 Search engines are able to return results quickly—even with millions of websites online—by scanning the Internet continuously and indexing every page they find.
 
+# Q & A
+
 What new skills will you need to acquire? What topics will you need to research? \
 I greatly need enhanced my skills across languages. I learned, and need to continue learning, more methods for achieveing my programming goals.
 
@@ -25,6 +27,8 @@ I do not have contact directly with any other students.
 In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
 
 Achieveing my goals inside a set time line will allow me to more realistic be prepaired you the demands of employers.
+
+# Thank You CS50
 
 I would like to thank the CS50 team, this was great!
 
