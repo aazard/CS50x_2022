@@ -9,7 +9,7 @@ This repository keeps track all my learning progress on [Harvard University - CS
 ### CS50’s (free) OpenCourseWare - Introduction to Computer Science
 https://online-learning.harvard.edu/course/cs50-introduction-computer-science \
 https://www.edx.org/course/cs50s-introduction-to-computer-science \
-https://cs50.harvard.edu/x/2022 \
+https://cs50.harvard.edu/x/2022 
 
 An investment in knowledge pays the best interest.\
 Keep learning!
