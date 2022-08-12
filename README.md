@@ -10,5 +10,3 @@ This repository keeps track all my learning progress on [Harvard University - CS
 https://online-learning.harvard.edu/course/cs50-introduction-computer-science \
 https://www.edx.org/course/cs50s-introduction-to-computer-science \
 https://cs50.harvard.edu/x/2022 
-
-We ask for your grace, despite our pride. Your forgiveness, despite our doubt..\
