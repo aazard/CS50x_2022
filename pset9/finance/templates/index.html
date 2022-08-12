@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Bought at</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for p in portfolio%}
+                <tr>
+                    <td>{{p.symbol}}</td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.shares}}</td>
+                    <td>{{p.price | usd}}</td>
+                    <td class="{{p.class}}">{{p.act | usd}}</td>
+                    <td class="{{p.class}}">{{(p.shares * p.act) | usd}}</td>
+                    <td class="flex"><div id="{{p.id}}" onclick="onBuyClick('{{p.symbol}}')" class="numberCircle rising">B</div><div id="{{p.id}}" onclick="onSellClick('{{p.symbol}}')"class="numberCircle falling">S</div></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="5">CASH</td>
+                    <td>{{user.cash | usd}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5"></td>
+                    <td>{{total | usd}}</td>
+                </tr>
+            </tfoot>
+        </table>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                    <th>Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for h in history%}
+                <tr>
+                    <td>{{h.symbol}}</td>
+                    <td>{{h.name}}</td>
+                    <td>{{h.shares}}</td>
+                    <td>{{h.price | usd}}</td>
+                    <td>{{(h.shares * h.price) | usd}}</td>
+                    {% if h.action == "buy" %}
+                    <td class="rising">Buy</td>
+                    {% elif h.action == "sell" %}
+                    <td class="falling">Sell</td>
+                    {% else %}
+                    <td class="stabel">Add</td>
+                    {% endif %}
+                    <td>{{h.date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
