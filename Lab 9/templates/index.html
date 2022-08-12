@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="https://www.svgrepo.com/show/229632/birthday-cake-cake.svg">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+        <script>
+            /* global var to save editing mode */
+            let gEditing = false;
+            /* global json object to store old values */
+            let gStore = {
+                "name": "",
+                "month": 0,
+                "day": 0
+            }
+
+            /* function which is called by delete icon */
+            function onDeleteClick(id) {
+                if (!gEditing) { //if not editing right now, send delete
+                    fetch('/delete', {
+                        method : 'POST',
+                        body: JSON.stringify({
+                            id: id
+                        }),
+                        contentType: "application/json",
+                    })
+                    .then(response => response.json())
+                    .then(resp => {
+                        if (resp.result) {
+                                location.reload();
+                            };
+                        }
+                    )
+                }
+                else {
+                    //restoring
+                    var nametd = document.querySelector(`#name-${id}`);
+                    nametd.innerHTML = gStore["name"];
+
+                    var datetd = document.querySelector(`#date-${id}`);
+                    datetd.innerHTML = `${gStore["month"]}/${gStore["day"]}`;
+
+                    //show edit
+                    document.querySelector(`#edit-${id}`).style = "";
+                    //hide apply
+                    document.querySelector(`#apply-${id}`).style = "display: none;";
+                    gEditing = false;
+                }
+            }
+
+            /* function which is called by edit icon
+               sets all the input fields for editing
+            */
+            function onEditClick(id) {
+                gEditing = true;
+                //creating input fields
+                var monthEdit = document.createElement('input');
+                monthEdit.type = 'text';
+                monthEdit.id = `month-edit-${id}`;
+                monthEdit.max = 12;
+                monthEdit.min = 1;
+
+                var dayEdit = document.createElement('input');
+                dayEdit.type = 'text';
+                dayEdit.id = `day-edit-${id}`;
+                monthEdit.max = 31;
+                monthEdit.min = 1;
+
+                var nameEdit = document.createElement('input');
+                nameEdit.type = 'text';
+                nameEdit.id = `name-edit-${id}`;
+
+                // getting values from edit
+                var nametd = document.querySelector(`#name-${id}`);
+                var datetd = document.querySelector(`#date-${id}`);
+                nameEdit.value = nametd.innerHTML;
+                gStore["name"] = nametd.innerHTML;
+                monthEdit.value = datetd.innerHTML.split('/')[0];
+                gStore["month"] = datetd.innerHTML.split('/')[0];
+
+                dayEdit.value = datetd.innerHTML.split('/')[1];
+                gStore["day"] = datetd.innerHTML.split('/')[1];
+
+                //setting inputs
+                nametd.innerHTML = "";
+                nametd.appendChild(nameEdit);
+                datetd.innerHTML = "";
+                datetd.appendChild(monthEdit);
+                datetd.appendChild(dayEdit);
+                //hide edit
+                document.querySelector(`#edit-${id}`).style = "display: none;";
+                //show apply
+                document.querySelector(`#apply-${id}`).style = "";
+
+            }
+
+            /* function which is called by apply icon
+               applies changess by senden request to server and waits for result
+            */
+            function onApplyClick(id) {
+                if (gEditing) {
+                    //if editing get values
+                    var name = document.querySelector(`#name-edit-${id}`);
+                    var month = document.querySelector(`#month-edit-${id}`);
+                    var day = document.querySelector(`#day-edit-${id}`);
+
+                    // send reqeust to server
+                    fetch('/edit', {
+                        method : 'POST',
+                        body: JSON.stringify({
+                            id: id,
+                            name: name.value,
+                            month: month.value,
+                            day: day.value
+                        }),
+                        contentType: "application/json",
+                    })
+                    .then(response => response.json())
+                    .then(resp => {
+                        if (resp.result) { // successful? than reload
+                            location.reload();
+                        }
+                        else { // if not set alert and reload
+                            alert(resp.message);
+                            location.reload();
+                        }
+                    })
+                }
+                else {
+                    return;
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <div id="error-message" class="error_message">
+                    {{ message }}
+                </div>
+
+                <h2>Add a Birthday</h2>
+                <form action="/" method="POST">
+                    <input name="name" type="text" placeholder="Name" autocomplete="off" autofocus>
+                    <input name="month" type="number" placeholder="Month" max="12" min="1" autocomplete="off" autofocus>
+                    <input name="day" type="number" placeholder="Day" max="31" min="1" autocomplete="off" autofocus>
+                    <input type="submit" value="Add Birthday">
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop through the database entries to display them in this table -->
+                        {% for birth in birthdays %}
+                        <tr class="row-indication" id="{{birth.id}}">
+                            <td id="name-{{birth.id}}">{{birth.name}}</td>
+                            <td id="date-{{birth.id}}">{{birth.month}}/{{birth.day}}</td>
+                            <td class="small-td">
+                                <i id="edit-{{birth.id}}" onclick="onEditClick({{birth.id}})" class="fa fa-edit"></i>
+                                <i id="apply-{{birth.id}}" onclick="onApplyClick({{birth.id}})" class="fa fa-check" style="display: none;"></i>
+                                <i onclick="onDeleteClick({{birth.id}})" class="fa fa-minus" aria-hidden="true"></i>
+                                </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
