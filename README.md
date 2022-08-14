@@ -64,13 +64,11 @@ I can't wait to expand beyond CS50x to other courses!!!! Thank you again - I hop
 
 ## Video Demo Scratch
 
-![opera_dbVTCmJFc9](https://user-images.githubusercontent.com/45321972/184549989-f2884524-fed5-4fa8-9a81-191c56fb9ec6.gif)
+https://user-images.githubusercontent.com/45321972/184550290-b28c483c-49dc-4a63-8fb0-9c61a8d05bb1.mp4
 
 ## Video Demo Final
 
-
 https://user-images.githubusercontent.com/87879515/179226460-8e7f9135-dd68-4ee8-a6e9-1bc14076ac03.mp4
-
 
 
 ## Contributing
