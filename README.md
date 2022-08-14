@@ -2,7 +2,7 @@
 CS50x_2022
 
 This repository keeps track all my learning progress on [Harvard University - CS50: Introduction to Computer Science](https://cs50.harvard.edu/x/2022/)
-> 100% scores! ✅ My very own psets solution from Canada
+> 100% scores! ✅ My 2nd (2021-2022) year of CS50, 100% of psets/labs, 0-9 and final project, from Canada!
 
 ![IT gradebook](https://i.imgur.com/RjHwSQr.png)
 
