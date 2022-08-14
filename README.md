@@ -39,7 +39,7 @@ A2. N/A, I do not have contact directly with any other students.
 
 ### Q3. In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
 
-A3. Achieveing my goals inside a set time line will allow me to more realistic prepair me for the demands of employers.
+A3. Achieveing my goals inside a set time line will allow me to meet the demands of my employers.
 
 # Thank You CS50
 
