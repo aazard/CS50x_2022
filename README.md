@@ -29,17 +29,17 @@ Search engines are able to return results quickly—even with millions of websit
 
 # Q & A
 
-Q1. What new skills will you need to acquire? What topics will you need to research? \
+### Q1. What new skills will you need to acquire? What topics will you need to research?
 
 A1. I greatly need enhanced my skills across languages. I learned, and need to continue learning, more methods for achieveing my programming goals.
 
-Q2. If working with one or two classmates, who will do what? \
+### Q2. If working with one or two classmates, who will do what?
 
 A2. N/A, I do not have contact directly with any other students.
 
-Q3. In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
+### Q3. In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
 
-A3. Achieveing my goals inside a set time line will allow me to more realistic be prepaired you the demands of employers.
+A3. Achieveing my goals inside a set time line will allow me to more realistic prepair me for the demands of employers.
 
 # Thank You CS50
 
