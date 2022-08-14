@@ -61,13 +61,15 @@ So I, at this moment, declare you part of the Hogwarts School of Witchcraft and 
 
 I can't wait to expand beyond CS50x to other courses!!!! Thank you again - I hope you see this message and know that I am grateful!!!
 
-## Video Demo
+
+## Video Demo Scratch
+
+![opera_dbVTCmJFc9](https://user-images.githubusercontent.com/45321972/184549989-f2884524-fed5-4fa8-9a81-191c56fb9ec6.gif)
+
+## Video Demo Final
 
 
 https://user-images.githubusercontent.com/87879515/179226460-8e7f9135-dd68-4ee8-a6e9-1bc14076ac03.mp4
-
-
-
 
 
 
